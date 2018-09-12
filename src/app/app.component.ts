@@ -18,15 +18,14 @@ export class AppComponent {
   constructor( private modalService: NgbModal) {
   }
 
-
-
   openDialog(info) {
     const modalRef = this.modalService.open(MyModalComponent, { size: 'lg' });
 
-    modalRef.componentInstance.Mypro = info;
+    modalRef.componentInstance.Mypro = info; //we pass our parameter that we need into the modal component  
     
     modalRef.result.then((result) => {
       console.log("res", result);
+      // here we get the result of submited form 
     }).catch((error) => {
       console.log("error", error);
     });
