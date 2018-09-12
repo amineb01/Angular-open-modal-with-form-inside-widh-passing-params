@@ -32,5 +32,6 @@ export class MyModalComponent  implements DoCheck {
   }
   ngDoCheck() {
     console.log("id", this.info)
+    // this is a life cycle hook of angular to detect modification that  can help us to get data from parent component
   }
 }
