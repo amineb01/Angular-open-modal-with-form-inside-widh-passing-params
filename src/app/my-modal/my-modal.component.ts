@@ -1,5 +1,5 @@
 
-import { Component, Output, EventEmitter, Input,DoCheck } from '@angular/core';
+import { Component, Output, EventEmitter, Input,AfterViewInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -8,7 +8,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './my-modal.component.html',
   styleUrls: ['./my-modal.component.css']
 })
-export class MyModalComponent  implements DoCheck {
+export class MyModalComponent  implements AfterViewInit {
 
   info
 
@@ -30,7 +30,7 @@ export class MyModalComponent  implements DoCheck {
   private submitForm() {
     this.activeModal.close(this.myForm.value);
   }
-  ngDoCheck() {
+  ngAfterViewInit() {
     console.log("id", this.info)
     // this is a life cycle hook of angular to detect modification that  can help us to get data from parent component
   }
